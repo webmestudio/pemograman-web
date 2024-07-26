@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Penggantian Konten Dengan Javascript</h1>
+
+<p id="contoh">
+Ini konten awal di sebuah elemen paragraf.
+</p>
+
+<script>
+function FungsiPengganti()
+{
+x=document.getElementById("contoh");  // Mencari elemen 
+x.innerHTML="Ini teks yang baru!";    // Mengubah kontennya
+}
+</script>
+
+<button type="button" onclick="FungsiPengganti()">Klik!</button>
+
+</body>
+</html>

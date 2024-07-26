@@ -1,0 +1,25 @@
+<html>
+<head> 
+<title>
+Tulis di Canvas 
+</title>
+</head>
+<body>
+<canvas id="tempatgambar" style="border: 1px solid;" width="200" height="200"> 
+</canvas> 
+<script> 
+  function menuliskanGambar() { 
+    // mengambil elemen canvas 
+    var canvas = document.getElementById('tempatgambar'); 
+    var context = canvas.getContext('2d'); 
+     // membuat path 
+    context.beginPath(); 
+    context.moveTo(50, 100); 
+    context.lineTo(150, 50); 
+     // menuliskan path
+    context.stroke(); 
+  } 
+    window.addEventListener("load", menuliskanGambar, true); 
+</script> 
+</body>
+</html>

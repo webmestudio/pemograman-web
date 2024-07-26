@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Klik Untuk Melihat Efek Kata Kunci Continue.</p>
+<button onclick="FungsiKu()">Klik</button>
+<p id="konten"></p>
+
+<script>
+function FungsiKu()
+{
+var x="",i=0;
+for (i=0;i<10;i++)
+  {
+  if (i==3)
+    {
+    continue;
+    }
+  x=x + "Pengulangan Ke " + i + "<br>";
+  }
+document.getElementById("konten").innerHTML=x;
+}
+</script>
+
+</body>
+</html>

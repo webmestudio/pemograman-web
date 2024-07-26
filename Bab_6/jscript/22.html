@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Klik Untuk For Loop.</p>
+<button onclick="FungsiKu()">Klik</button>
+<p id="konten"></p>
+
+<script>
+function FungsiKu()
+{
+var x="";
+for (var i=0;i<5;i++)
+  {
+  x=x + "Angkanya adalah " + i + "<br>";
+  }
+document.getElementById("konten").innerHTML=x;
+}
+</script>
+
+</body>
+</html>

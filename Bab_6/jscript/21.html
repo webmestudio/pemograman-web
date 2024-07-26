@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Klik untuk menghitung hari.</p>
+
+<button onclick="FungsiKu()">Klik </button>
+
+<p id="konten"></p>
+
+<script>
+function FungsiKu()
+{
+var x;
+var d=new Date().getDay();
+switch (d)
+  {
+  case 0:
+    x="Sekarang Hari Minggu";
+    break;
+  case 1:
+    x="Sekarang Hari Senin";
+    break;
+  case 2:
+    x="Sekarang Hari Selasa";
+    break;
+  case 3:
+    x="Sekarang Hari Rabu";
+    break;
+  case 4:
+    x="Sekarang Hari Kamis";
+    break;
+  case 5:
+    x="Sekarang Hari Jum'at";
+    break;
+  case 6:
+    x="Sekarang hari Sabtu";
+    break;
+  }
+document.getElementById("konten").innerHTML=x;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Klik untuk melakukan pengulangan.</p>
+<button onclick="FungsiKu()">Klik</button>
+<p id="konten"></p>
+
+<script>
+function FungsiKu()
+{
+var x="",i=0;
+while (i<5)
+  {
+  x=x + "Angkanya adalah " + i + "<br>";
+  i++;
+  }
+document.getElementById("konten").innerHTML=x;
+}
+</script>
+
+</body>
+</html>

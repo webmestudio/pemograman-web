@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Menampilkan data dari Server</title>
+    
+<script language=javascript>
+var objekxhr;
+  
+function ambildata() {
+	/*untuk mengambil data dari server
+	kode ini akan dipecah menjadi beberapa fungsi terpisah
+	*/
+    buatxhr();
+	objekxhr.open("GET", "data/data.txt");
+	objekxhr.send(null);
+	objekxhr.onreadystatechange=tampilkan;
+}
+function buatxhr() {
+	//ini untuk membuat objek XMLHTTPRequest
+    if (window.ActiveXObject) {
+		//ini kode untuk membuat objek XHR jika user pake IE
+        objekxhr = new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+    else if (window.XMLHttpRequest) {
+		//ini kode untuk membuat objek XHR untuk non-IE
+        objekxhr = new XMLHttpRequest();
+    } else {
+	alert("Segara ganti browser anda, browser ini tidak support Ajax");
+	}
+}
+function tampilkan(){
+	document.getElementById("kotak").innerHTML = objekxhr.responseText;
+}  
+
+</script>
+</head>
+
+<body>
+    <input type="button" value="Klik untuk tampilkan tabel" onclick="ambildata();"/>
+    <div id="kotak"><!== ini tempat menampilkan teks></div>
+	</body>
+</html>

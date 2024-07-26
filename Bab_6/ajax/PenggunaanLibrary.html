@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>
+
+Penggunaan Library
+</title>
+<script language=javascript src="data/library.js">
+//ini dia kode untuk mencantumkan library
+</script>
+
+</head>
+<body>
+<h1> Contoh Penggunaan Library AJAX</h1>
+<input type="button" value="Klik untuk tampilkan tabel" onclick="permintaanAJAX('data/data.txt')";/>
+<div id="kotak"><!== ini tempat menampilkan teks></div>
+<script language=javascript>
+//Fungsi yang dipanggil jika ternyata data sukses diambil dari server;
+function kaloSukses() {
+//bertugas menampilkan data ke elemen yg punya id="kotak"
+document.getElementById("kotak").innerHTML="Berikut ini tabel yang dibuat dari data di server : <br />"+objekXHR.responseText;
+}
+</script>
+</body>
+</html>

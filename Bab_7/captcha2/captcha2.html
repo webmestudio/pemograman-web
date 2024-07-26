@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script language="JavaScript" type="text/javascript" src="ajax_captcha.js"></script>
+	</head>
+	<body>
+	<!--
+	Ini kode HTML untuk menampilkan form
+	-->
+	<form id="frmCaptcha" name="frmCaptcha">
+		<table> 
+			<tr>
+				<td align="left">
+					<label for="captcha">Masukkan Captcha</label>
+				</td>
+				<td>
+					<input id="txtCaptcha" type="text" name="txtCaptcha" value="" maxlength="10" size="32" />
+				</td>
+				</tr>
+				<tr>
+				<td>
+				&nbsp;
+				</td>
+				<td> 
+					<!--jika button dibawah diklik, otomatis file buat_gambar.php terupdate karena server-side-->
+					<img id="imgCaptcha" src="buat_gambar.php" />
+				</td>
+				</tr>
+			
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					<!--ini kode untuk menampilkan button guna mengeksekusi proses, jika diklik maka frmCaptcha akan refresh-->
+					<input id="btnCaptcha" type="button" value="Captcha Test" name="btnCaptcha" 
+						onclick="getParam(document.frmCaptcha)" />
+				</td>
+			</tr>
+		</table> 
+
+		<div id="hasil">&nbsp;</div>
+	</form>
+	</body>
+</html>

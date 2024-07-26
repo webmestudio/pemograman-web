@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Klik Untuk Mengulangi.</p>
+<button onclick="fungsiKu()">Klik</button>
+<p id="konten"></p>
+
+<script>
+function fungsiKu()
+{
+var x="",i=0;
+for (i=0;i<10;i++)
+  {
+  if (i==3)
+    {
+    break;
+    }
+  x=x + "Angkanya " + i + "<br>";
+  }
+document.getElementById("konten").innerHTML=x;
+}
+</script>
+
+</body>
+</html>

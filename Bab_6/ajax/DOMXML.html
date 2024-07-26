@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Parsing XML Menggunakan DOM</title>
+<script language=javascript>
+var objekXHR;//ini untuk deklarasi variabel objekXHR
+var tipe = "";//ini untuk deklarasi tipe dan mengosongkannya
+function buatobjekXHR() {
+	//fungsi untuk membuat objek XMLHttpRequest
+    if (window.ActiveXObject) {
+		//untuk IE
+        objekXHR = new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+    else if (window.XMLHttpRequest) {
+		//untuk non-IE
+        objekXHR = new XMLHttpRequest();
+    } else
+	{//jika ternyata browser tidak bisa mengakses kode AJAX
+	alert("Ganti browser Anda, browser ini tidak support Ajax");
+	}
+}
+function cariJadwal(tipeJadwal) {
+	/*fungsi untuk mengambil jadwal dari server 
+	dan kemudian menampilkannya
+	fungsi ini akan memanggil fungsi-fungsi lainnya*/
+    tipe = tipeJadwal;
+    buatobjekXHR();
+    objekXHR.onreadystatechange = pilihJenisJadwal;
+	//di bawah ini kode untuk mengambil data dari file XML
+    objekXHR.open("GET", "data/data.xml", true);
+    objekXHR.send(null);
+}
+function pilihJenisJadwal() {
+	/*Dekomposisi untuk melihat apakah tipe jadwal 
+	adalah keseluruhan atau hari tertentu	
+	*/
+    if(objekXHR.readyState == 4) {
+        if(objekXHR.status == 200) {
+            if(tipe == "senin") {
+                jadwalHarian("senin");
+            }
+			if(tipe == "selasa") {
+			jadwalHarian("selasa");
+			}
+			if(tipe == "rabu") {
+			jadwalHarian("rabu");
+			}
+			if(tipe == "kamis") {
+			jadwalHarian("kamis");
+			}
+            else if(tipe == "all") {
+                jadwalMingguan();
+            }
+        }
+    }
+}
+function jadwalHarian(hari) {
+	/*Ini kode untuk memparsing data dari 
+	dokumen XML guna menghasilkan data jadwal harian
+	*/
+    var xmlDoc = objekXHR.responseXML;
+    var jadwalPerHari = xmlDoc.getElementsByTagName(hari)[0];
+    var detilPerHari = jadwalPerHari.getElementsByTagName("mapel");
+    //kode berikut untuk memanggil fungsi penjadwalan
+	tampilkanJadwal("<strong>Jadwal Hari "+ hari +"</strong>", detilPerHari);
+}
+function jadwalMingguan() {
+	/*ini kode untuk memparsing data dari 
+	dokumen XML guna menghasilkan 
+	data jadwal mingguan*/
+    var xmlDoc = objekXHR.responseXML;
+    var semuaPelajaran= xmlDoc.getElementsByTagName("mapel");
+    tampilkanJadwal("<strong> Pelajaran Satu Minggu </strong>", semuaPelajaran);
+}
+function tampilkanJadwal(namaHari, namaPelajaran) {
+    //menampilkan hasilnya di kotak DIV dengan 
+	var out = namaHari;
+    var pelajaran = null;
+    for(var i = 0; i < namaPelajaran.length; i++) {
+        pelajaran = namaPelajaran[i];
+        out = out + "<br />" + pelajaran.childNodes[0].nodeValue;
+    }    
+    //alert(out);
+	document.getElementById('kotak').innerHTML=out;
+}
+</script>
+</head>
+<body>
+    <h1>Jadwal Pelajaran Mingguanku</h1>
+    <br/><br/>
+    <form action="#">
+        <input type="button" value="Jadwal Semua Hari" onclick="cariJadwal('all');"/>
+            <input type="button" value="Jadwal Hari Senin" onclick="cariJadwal('senin');"/>
+				<input type="button" value="Jadwal Hari Selasa" onclick="cariJadwal('selasa');"/>
+		<input type="button" value="Jadwal Hari Rabu" onclick="cariJadwal('rabu');"/>
+    <input type="button" value="Jadwal Hari Kamis" onclick="cariJadwal('kamis');"/>
+	</form>
+	<br />
+	<div id="kotak"> <!==Ini untuk menampilkan jadwal==> </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head> 
+<title>
+Menyimpan Data Lokal  
+</title>
+</head>
+<body>
+<h1> Contoh penyimpanan data di LocalStorage</h1> 
+<script>
+localStorage.dataNama="Nurdin Halid";
+document.write(localStorage.dataNama);
+</script>
+</br>
+<script>
+//menghitung jumlah kunjungan
+if (localStorage.jmlKunjungan)
+  {
+  localStorage.jmlKunjungan=Number(localStorage.jmlKunjungan)+1;
+  }
+else
+  {
+  localStorage.jmlKunjungan=1;
+  }
+document.write("Jumlah kunjungan "+ localStorage.jmlKunjungan + " kali.");
+</script>
+
+</body>
+</html>

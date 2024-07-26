@@ -1,0 +1,54 @@
+<html>
+<head> 
+<title>
+Membuat Objek dengan Path di Canvas
+</title>
+
+</head>
+<body>
+<canvas id="tempatgambar" style="border: 1px solid;" width="250" height="250 
+</canvas> 
+<script> 
+function MembuatPathPohon(context) { 
+  // Membuat kanopi dari pohon 
+  context.beginPath(); 
+ 
+  context.moveTo(-25, -50); 
+  context.lineTo(-10, -80); 
+  context.lineTo(-20, -80); 
+  context.lineTo(-5, -110); 
+  context.lineTo(-15, -110); 
+ 
+  // Membuat bagian atas pohon
+  context.lineTo(0, -140); 
+ 
+  context.lineTo(15, -110); 
+  context.lineTo(5, -110); 
+  context.lineTo(20, -80); 
+  context.lineTo(10, -80); 
+  context.lineTo(25, -50); 
+ 
+  // Menutup path kembali ke titik awal 
+  context.closePath(); 
+}
+
+function MenggambarPath() { 
+  var canvas = document.getElementById('tempatgambar'); 
+  var context = canvas.getContext('2d'); 
+ 
+  context.save(); 
+  context.translate(130, 250); 
+ 
+  // Membuat shape untuk bagian kanopi 
+  MembuatPathPohon(context); 
+ 
+  // Menuliskan path 
+  context.stroke(); 
+  context.restore(); 
+}
+//ini untuk memanggil fungsi-fungsi di atasn
+MenggambarPath()
+</script>
+
+</body>
+</html>

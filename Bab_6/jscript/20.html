@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Klik pada tombol</p>
+
+<button onclick="FungsiKu()">Hitung</button>
+
+<p id="konten"></p>
+
+<script>
+function FungsiKu()
+{
+var x="";
+var waktu=new Date().getHours();
+if (waktu<20)
+  {
+  x="Ini Siang Hari";
+  }
+else
+  {
+  x="Ini Malam Hari ";
+  }
+document.getElementById("konten").innerHTML=x;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>
+Contoh Mengambil nilai teks untuk digunakan sebagai command JavaScript
+</title>
+
+<script language = javascript>
+//script berikut untuk membuat objek XMLHttpRequest
+var objekXHR = false; 
+if (window.XMLHttpRequest) {
+objekXHR = new XMLHttpRequest();
+} else if (window.ActiveXObject) {
+objekXHR = new ActiveXObject(Microsoft.XMLHttp);
+}
+//ini fungsi untuk mengambil data dari sumber data
+function ambilData(dataSource) { 
+if(objekXHR) {
+objekXHR.open("GET", dataSource); 
+objekXHR.onreadystatechange = function() 
+{ 
+if (objekXHR.readyState == 4 && objekXHR.status == 200) { 
+eval(objekXHR.responseText); 
+} 
+} 
+objekXHR.send(null); 
+}
+}
+</script>
+</head>
+<body>
+<noscript>
+Aktifkan javascript euy!!
+</noscript>
+<H1>Klik tombol berikut untuk menghubungi server</H1>
+<form>
+<input type = "button" value = "Klik untuk menghubungi server" onclick = "ambilData('data/sebutkan.php')"> 
+</form>
+</body> 
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jadwal>
+    <senin>
+        <mapel>Matematika</mapel>
+        <mapel>Fisika</mapel>
+        <mapel>Kimia</mapel>
+    </senin>
+    <selasa>
+        <mapel>Algoritma Pemrograman</mapel>
+        <mapel>OOP</mapel>
+        <mapel>Database</mapel>
+    </selasa>
+    <rabu>
+        <mapel>Olah Raga</mapel>
+        <mapel>Bahasa Indonesia</mapel>
+        <mapel>Bahasa Inggris</mapel>
+    </rabu>
+    <kamis>
+        <mapel>Troubleshooting</mapel>
+        <mapel>Elektronika Dasar</mapel>
+        <mapel>Matematika Teknik</mapel>
+    </kamis>
+</jadwal>

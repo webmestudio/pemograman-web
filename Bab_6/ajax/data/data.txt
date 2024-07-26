@@ -1,0 +1,25 @@
+<table border="2" bgcolor="pink">
+  <tbody>
+    <tr>
+      <td>Senin</td>
+      <td>Selasa</td>
+      <td>Rabu</td>
+      <td>Kamis</td>
+      <td>Jumat</td>
+    </tr>
+    <tr>
+      <td>Matematika Teknik</td>
+      <td>Fisika Dasar</td>
+      <td>Kalkulus</td>
+      <td>Algoritma Pemrograman</td>
+      <td>C++</td>
+    </tr>
+    <tr>
+      <td>Kimia Dasar</td>
+      <td>Biokimia</td>
+      <td>Agama</td>
+      <td>OOP</td>
+      <td>Algoritma Pemrograman2 </td>
+    </tr>
+  </tbody>
+</table>

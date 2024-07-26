@@ -1,0 +1,28 @@
+<html>
+<head> 
+<title>
+Menyimpan Dengan Session Storage 
+</title>
+</head>
+<body>
+<h1> Contoh penyimpanan data di SessionStorage</h1> 
+<script >
+sessionStorage.simpananData="Edy Paryono";
+document.write(sessionStorage.simpananData);
+</script>
+</br>
+<script>
+if (sessionStorage.jumlahKunjunganPerSession)
+  {
+  sessionStorage.jumlahKunjunganPerSession=Number(sessionStorage.jumlahKunjunganPerSession) +1
+1;
+  }
+else
+  {
+  sessionStorage.jumlahKunjunganPerSession=1;
+  }
+document.write("Jumlah kunjungan "+sessionStorage.jumlahKunjunganPerSession+" kali di sesi ini.");
+</script>
+
+</body>
+</html>

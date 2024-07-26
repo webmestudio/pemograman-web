@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validasiForm()
+{
+var x=document.forms["formKu"][namaDepan].value;
+if (x==null || x=="")
+  {
+  alert("Anda harus mengisi teks dulu");
+  return false;
+  }
+}
+</script>
+</head>
+
+<body>
+<form name="formKu" action="pemrosesan.php" onsubmit="return validasiForm()" method="post">
+Nama : <input type="text" name="namaDepan">
+<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>
